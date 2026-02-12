@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>POUR MY **INCLUDE**❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 55px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.message {
+    font-size: 22px;
+    max-width: 600px;
+    opacity: 0;
+    transition: 1.5s;
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 35px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    background: white;
+    color: #ff4f81;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+button:hover {
+    background: #ff4f81;
+    color: white;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Cœurs animés */
+.heart {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ JUSTE FOR YOU MY **INCLUDE**(DORIS) ❤️</h1>
+
+<div class="message" id="text">
+   Joyeuse Saint-Valentin mon amour.❤️
+Chaque jour passé avec toi est un cadeau.❤️
+ Merci d’être celle qui illumine ma vie,❤️
+qui me fait sourire sans raison et qui rend mon monde plus beau.❤️
+Je t’aime plus que les mots ne peuvent l’exprimer.❤️
+meme si je sais que je ne fait rien de concrait pour te prouver,❤️
+   que je t'aime vraiment ❤️
+</div>
+
+<button onclick="startLove()">Clique ici mon amour 💌</button>
+
+<audio id="music" loop>
+    <source src="Dadju-Nous-Ft-Davido-(TrendyBeatz.com).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function startLove() {
+    document.getElementById("text").style.opacity = "1";
+    document.getElementById("music").play();
+}
+
+// Génération de cœurs
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️💕";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
